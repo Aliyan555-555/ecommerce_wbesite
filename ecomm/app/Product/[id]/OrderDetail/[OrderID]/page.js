@@ -9,7 +9,7 @@ import { jwtDecode } from "jwt-decode";
 import { useEffect } from "react";
 import Link from "next/link";
 
-function page(){
+function OrderDetails(){
 
   const [OrdersDetails, setOrdersDetails] = useState({});
   const parems = useParams();
@@ -157,4 +157,4 @@ function page(){
   );
 };
 
-export default page;
+export default OrderDetails;

@@ -4,7 +4,7 @@ import { client } from '@/lib/client'
 import { useEffect,useState } from 'react'
 import StaticProduct from '@/components/StaticProduct'
 import Head from 'next/head'
-function page ({params}){
+function Product ({params}){
   const [product, setproduct] = useState([]);
   const getData=async()=>{
     const qurye=`*[_type == 'Product']`
@@ -30,4 +30,4 @@ function page ({params}){
   )
 }
 
-export default page
+export default Product
