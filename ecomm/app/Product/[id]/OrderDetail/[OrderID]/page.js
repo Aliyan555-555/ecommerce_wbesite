@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import Link from "next/link";
 
 const page = () => {
+
   const [OrdersDetails, setOrdersDetails] = useState({});
   const parems = useParams();
   const OrderData = async () => {
