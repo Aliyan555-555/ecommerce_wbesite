@@ -3,7 +3,7 @@ import React from "react";
 import { BiBell, BiSearch } from "react-icons/bi";
 import Example from "./Graphe";
 import { useRouter } from "next/navigation";
-import { Link } from "react-browser-router";
+// import { Link } from "react-browser-router";
 import CircleChart from "./CircleChart";
 
 const Overview = ({ position }) => {
@@ -79,14 +79,14 @@ const Overview = ({ position }) => {
             <div className="w-full flex flex-col">
               <div className="w-full flex items-center justify-between  px-12 py-10">
                 <h2 className="text-3xl font-bold ">Latest Orders</h2>
-                <Link to={"/Admin/Dashboard/Order"}>
+                <button to={"/Admin/Dashboard/Order"}>
                   <button
                     type="button"
                     className="px-8 py-4 rounded-xl text-2xl bg-Dashboard text-hover"
                   >
                     See ALL Orders
                   </button>
-                </Link>
+                </button>
               </div>
               <div className="w-full flex items-center justify-between px-10 text-xl py-4">
                 <span>date</span>

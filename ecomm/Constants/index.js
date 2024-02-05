@@ -49,31 +49,31 @@ export const Dashboard_routes = [
     name: "Overview",
     icon: PiDiamondsFourFill,
     id: 1,
-    href: "/654689e4fb7e5478e0862ae8/Dashboard",
+    href: "/Dashboard",
   },
   {
     name: "Products",
     icon: HiMiniShoppingBag,
     id: 2,
-    href: "/654689e4fb7e5478e0862ae8/Dashboard/Products",
+    href: "/Dashboard/Products",
   },
   {
     name: "Customers",
     icon: BiSolidUserCircle,
     id: 3,
-    href: "/654689e4fb7e5478e0862ae8/Dashboard/Customers",
+    href: "/Dashboard/Customers",
   },
   {
     name: "Order",
     icon: BsFileEarmarkBarGraphFill,
     id: 4,
-    href: "/654689e4fb7e5478e0862ae8/Dashboard/Order",
+    href: "/Dashboard/Orders",
   },
   {
     name: "Setting",
     icon: IoSettingsSharp,
     id: 5,
-    href: "/654689e4fb7e5478e0862ae8/Dashboard/Setting",
+    href: "/Dashboard/Settings",
   },
 ];
 export const ServicesData= [
@@ -166,13 +166,13 @@ export const Apps=[
     name: "Color Picker",
     icon: CiPickerHalf,
     id: 1,
-    href: "/654689e4fb7e5478e0862ae8/Dashboard/Color",
+    href: "/Dashboard/Colors",
   },
   {
     name: "Calender",
     icon: IoCalendar,
     id: 2,
-    href: "/654689e4fb7e5478e0862ae8/Dashboard/Calender",
+    href: "/Dashboard/Calenders",
   }
 ]
 export const ThemeColors=[

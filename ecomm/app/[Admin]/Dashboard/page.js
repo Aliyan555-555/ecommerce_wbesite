@@ -1,23 +1,24 @@
 "use client";
 import React, { Suspense, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Image from "next/image";
 import { SlSettings } from "react-icons/sl";
 import { GiCheckMark } from "react-icons/gi";
 import { Apps, Dashboard_routes, ThemeColors } from "@/Constants";
 import Overview from "@/components/Dashboard/Overview";
+import SidebarCom from "@/components/Dashboard/Sidebar";
 import Order from "@/components/Dashboard/Order";
 import User from "@/components/Dashboard/User";
 import Setting from "@/components/Dashboard/Setting";
-import history from "@/lib/history";
+// import history from "@/lib/history";
 import Skeleton from "../../../components/Dashboard/Colors";
 import Calender from "@/components/Dashboard/Calender";
 import Product from "@/components/Dashboard/Product";
 import { MdOutlineRadioButtonChecked, MdOutlineRadioButtonUnchecked } from "react-icons/md";
 import { Roboto } from 'next/font/google'
 import Loading from "@/components/Dashboard/Loading";
- 
+import Link from "next/link";
+import RightLayout from "@/components/Dashboard/RightLayout";
 const roboto = Roboto({
   weight: ['400','300','500','900', '700'],
   subsets: ['latin'],
@@ -58,15 +59,14 @@ useEffect(()=>{
  
   return (
     <Suspense fallback={<Loading/>}>
-    <BrowserRouter>
+    {/* <BrowserRouter> */}
       <style jsx global>{`
       @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
         .Navbar {
           display: none;
+        } 
         *{
           font-family: 'Roboto', sans-serif;
-        }
-      
         }
       `}</style>
       <div className={`${roboto.className} box-border  relative ${Left} antialiased flex w-full h-screen bg-body p-6 gap-6 rounded-lg overflow-hidden`}>
@@ -113,7 +113,7 @@ useEffect(()=>{
             ))}
           </div>
         </div>
-        <div className="h-[99%]  w-[15%] bg-Dashboard rounded-2xl flex flex-col">
+        {/* <div className="h-[99%]  w-[15%] bg-Dashboard rounded-2xl flex flex-col">
           <div className="w-full h-[8rem] flex items-center justify-center relative ">
             <Image
               src={"/Logo_white.png"}
@@ -127,8 +127,8 @@ useEffect(()=>{
             <h2 className="px-6 text-3xl font-extrabold" style={{textAlign:Sidebar?'left':'right'}}> Menu</h2>
             {Dashboard_routes.map((item) => {
               return (
-                <Link
-                  to={item.href}
+                <Link 
+                  href={props.params.Admin+item.href}
                   className="w-full pl-6 h-[5.5rem] rounded-md flex items-center gap-6 justify-start"
                   key={item.id}
                   style={{flexDirection:Sidebar?'row':'row-reverse'}}
@@ -144,7 +144,7 @@ useEffect(()=>{
           <div className="w-full gap-4 flex flex-col p-4 text-hover">
             <h2 className="px-6 text-3xl font-extrabold" style={{textAlign:Sidebar?'left':'right'}}>Apps</h2>
             {Apps.map((item) => (
-              <Link
+              <button 
                 to={item.href}
                 className="w-full pl-6 py-3 flex items-center gap-6 justify-start"
                 key={item.id}
@@ -154,13 +154,14 @@ useEffect(()=>{
                 <h2 className="text-2xl text-left font-semibold cursor-pointer">
                   {item.name}
                 </h2>
-              </Link>
+              </button> 
             ))}
           </div>
-        </div>
+        </div> */}
+        <SidebarCom Admin = {props.params.Admin}/>
 
-        <div className="w-[85%] bg-body h-[99%] rounded-2xl subpixel-antialiased">
-          <Routes history={history}>
+        {/* <div className="w-[85%] bg-body h-[99%] rounded-2xl subpixel-antialiased"> */}
+          {/* <Routes history={history}>
             <Route path={`/${props.params.Admin}/Dashboard/`} element={<Overview position={Sidebar}/>} />
             <Route path={`/${props.params.Admin}/Dashboard/Order`} element={<Order/>} />
             <Route path={`/${props.params.Admin}/Dashboard/Customers`} element={<User />} />
@@ -168,10 +169,14 @@ useEffect(()=>{
             <Route path={`/${props.params.Admin}/Dashboard/Setting`} element={<Setting />} />
             <Route path={`/${props.params.Admin}/Dashboard/Color`} element={<Skeleton />} />
             <Route path={`/${props.params.Admin}/Dashboard/Calender`} element={<Calender />} />
-          </Routes>
-        </div>
+          </Routes> */}
+          <RightLayout>
+            <Overview/>
+          </RightLayout>
+        {/* </div> */}
       </div>
-    </BrowserRouter></Suspense>
+    {/* </BrowserRouter> */}
+    </Suspense>
   );
 };
 
