@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
 
 
-const page = (props) => {
+function page(props){
   
   const router = useRouter();
   const [OTP, setOTP] = useState("");

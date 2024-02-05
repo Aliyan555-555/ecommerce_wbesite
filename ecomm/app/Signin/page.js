@@ -8,8 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Link from "next/link";
 import loading from "../loading";
-
-const page = () => {
+function page (){
   const Authenticated =async()=>{
     const res = await fetch('/api/googlejwt',{
       method:'POST',

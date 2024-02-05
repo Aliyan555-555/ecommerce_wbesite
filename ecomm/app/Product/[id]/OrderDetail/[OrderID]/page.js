@@ -9,7 +9,7 @@ import { jwtDecode } from "jwt-decode";
 import { useEffect } from "react";
 import Link from "next/link";
 
-const page = () => {
+function page(){
 
   const [OrdersDetails, setOrdersDetails] = useState({});
   const parems = useParams();

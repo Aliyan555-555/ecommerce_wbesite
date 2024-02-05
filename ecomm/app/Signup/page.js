@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
-const page = () => {
+function page (){
   const router = useRouter();
   const [data, setdata] = useState({ name: "", email: "", password: "" });
   const hendleChangeName = (e) => {
