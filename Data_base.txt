@@ -1,0 +1,2 @@
+Password=mkk0q5LSCmkwvtrD
+Data_base_name=ecommerse
