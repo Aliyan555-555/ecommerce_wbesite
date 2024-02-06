@@ -5,7 +5,7 @@ import React, { Suspense } from 'react'
 import Setting from '@/components/Dashboard/Setting';
 import Loading from '@/components/Loading';
 
-const page = (props) => {
+const Settings = (props) => {
   return (
     <Suspense fallback={<Loading/>}>
 
@@ -20,4 +20,4 @@ const page = (props) => {
   )
 }
 
-export default page
+export default Settings;

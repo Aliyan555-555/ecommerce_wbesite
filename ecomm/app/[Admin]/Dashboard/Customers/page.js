@@ -6,7 +6,7 @@ import Order from '@/components/Dashboard/Order';
 import User from '@/components/Dashboard/User';
 import Loading from '@/components/Loading';
 
-const page = (props) => {
+const Customers = (props) => {
   return (
     <Suspense fallback={<Loading/>}>
 
@@ -21,4 +21,4 @@ const page = (props) => {
   )
 }
 
-export default page
+export default Customers;

@@ -23,7 +23,7 @@ const roboto = Roboto({
   weight: ['400','300','500','900', '700'],
   subsets: ['latin'],
 })
-const page = (props) => {
+const Dashboard = (props) => {
   
   const [theme, settheme] = useState(false);
   const [Sidebar,setSidebar] = useState(true)
@@ -180,4 +180,4 @@ useEffect(()=>{
   );
 };
 
-export default page;
+export default Dashboard;

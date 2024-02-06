@@ -5,7 +5,7 @@ import React, { Suspense } from 'react'
 import Color from '@/components/Dashboard/Colors';
 import Loading from '@/components/Loading';
 
-const page = (props) => {
+const Colors = (props) => {
   return (
     <Suspense fallback={<Loading/>}>
 
@@ -20,4 +20,4 @@ const page = (props) => {
   )
 }
 
-export default page
+export default Colors;

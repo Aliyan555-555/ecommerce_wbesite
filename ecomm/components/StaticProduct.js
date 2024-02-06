@@ -5,6 +5,7 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { GlobleContext } from "@/Context/StateContext";
 import Link from "next/link";
 import Qty from "./Product/Qty";
+import Image from "next/image";
 const StaticProduct = ({ data }) => {
   const {
     qty,
@@ -204,7 +205,9 @@ console.log(Cartitem)
     <div className="w-[90%] flex flex-col sm:flex-row mt-8 sm:mt-0 mx-auto gap-8">
       <div className="w-full sm:w-[35%] h-[70vh] flex flex-col gap-3">
         <div className="w-full h-[80%] bg-hover rounded-[1rem] hover:bg-theme transition-all duration-700">
-          <img
+          <Image
+          width={200}
+          height={200}
             src={urlFor(image && image[index])}
             className="w-full h-[80%] object-contain"
             alt={title}
@@ -214,7 +217,9 @@ console.log(Cartitem)
           {image.length <= 4 &&
             image.map((data, i) => {
               return (
-                <img
+                <Image 
+                width={50}
+                height={50}
                   key={data._key}
                   src={urlFor(image && image[i])}
                   alt={title}

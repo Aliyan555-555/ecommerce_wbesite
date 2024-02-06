@@ -5,7 +5,7 @@ import React, { Suspense } from "react";
 import Calender from "@/components/Dashboard/Calender";
 import Loading from "@/components/Loading";
 
-const page = (props) => {
+const Calender = (props) => {
   return (
     <Suspense fallback={<Loading />}>
       <div
@@ -21,4 +21,4 @@ const page = (props) => {
   );
 };
 
-export default page;
+export default Calender;

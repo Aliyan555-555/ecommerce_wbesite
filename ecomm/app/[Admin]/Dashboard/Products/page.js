@@ -5,7 +5,7 @@ import Product from "@/components/Dashboard/Product";
 import React, { Suspense } from 'react'
 import Loading from '@/components/Loading';
 
-const page = (props) => {
+const Products = (props) => {
   return (
     <Suspense fallback={<Loading/>}>
 
@@ -20,4 +20,4 @@ const page = (props) => {
   )
 }
 
-export default page
+export default Products;

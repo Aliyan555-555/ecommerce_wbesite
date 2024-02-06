@@ -5,7 +5,7 @@ import React, { Suspense } from 'react'
 import Order from '@/components/Dashboard/Order';
 import Loading from '@/components/Loading';
 
-const page = (props) => {
+const Orders = (props) => {
   return (
 <Suspense fallback={<Loading/>}>
 <div className={` box-border  relative antialiased flex w-full h-screen bg-body p-6 gap-6 rounded-lg overflow-hidden`}>
@@ -19,4 +19,4 @@ const page = (props) => {
   )
 }
 
-export default page
+export default Orders;
