@@ -1,24 +1,26 @@
 "use client";
 import RightLayout from "@/components/Dashboard/RightLayout";
 import Sidebar from "@/components/Dashboard/Sidebar";
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import Calender from "@/components/Dashboard/Calender";
 import Loading from "@/components/Loading";
+import MainLayout from "@/components/Dashboard/MainLayout";
 
 const Calenders = (props) => {
+  useEffect(() => {
+    document.title = "Calender";
+},[])
   return (
     <Suspense fallback={<Loading />}>
-      <div
-        className={` box-border  relative antialiased flex w-full h-screen bg-body p-6 gap-6 rounded-lg overflow-hidden`}
-      >
+    <MainLayout>
         <style>{`.Navbar {display: none;}`}</style>
         <Sidebar Admin={props.params.Admin} />
         <RightLayout>
           <Calender />
         </RightLayout>
-      </div>
+     </MainLayout>
     </Suspense>
   );
 };
 
-export default Calender;
+export default Calenders;
