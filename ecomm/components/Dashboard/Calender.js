@@ -1,19 +1,14 @@
-import * as React from 'react';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
-import { Typography } from '@mui/material';
-import Header from './PageHeader';
 
-export default function Calender() {
+import 'react-calendar/dist/Calendar.css';
+import { useState } from 'react';
+import Calendar from 'react-calendar';
+ function MyApp() {
+  const [value, onChange] = useState(new Date());
   return (
-    <div className='w-full h-full flex flex-col'>
-      <Header type={'APP'} name={'Calender'} />
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-     
-      <DateCalendar />
-    
-    </LocalizationProvider>
+    <div style={{fontSize:'2rem'}} className={"w-full text-Dashboard flex items-center justify-center h-screen"}>
+      
+      <Calendar  onChange={(e)=>onChange(e)} value={value} />
     </div>
   );
 }
+export default MyApp;
