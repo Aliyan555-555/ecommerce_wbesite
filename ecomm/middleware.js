@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { parse } from "cookie";
 export async function middleware(req, res) {
   const { pathname, query } = req.nextUrl;
   const cookies = req.cookies.get("jwt");

@@ -7,6 +7,9 @@ import Loading from '@/components/Loading';
 import MainLayout from '@/components/Dashboard/MainLayout';
 
 const Colors = (props) => {
+  useEffect(() => {
+    document.title = "Colo";
+},[])
   return (
     <Suspense fallback={<Loading/>}>
 

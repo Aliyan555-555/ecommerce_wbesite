@@ -1,6 +1,6 @@
 
 import "./globals.css";
-// import { Inter } from "next/font/google";
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from "@/components/Navbar";
 import { StateContext } from "@/Context/StateContext";
 // const inter = Inter({ subsets: ["latin"] });
@@ -36,7 +36,7 @@ const RootLayout = (props) => {
           {props.children}
           
         </StateContext>
-      
+        <Analytics/>
         <ToastContainer/>
         </Auth>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-F423JYKK29"></script>
