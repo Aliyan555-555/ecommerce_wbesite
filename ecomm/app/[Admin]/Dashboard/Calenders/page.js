@@ -5,7 +5,7 @@ import React, { Suspense } from "react";
 import Calender from "@/components/Dashboard/Calender";
 import Loading from "@/components/Loading";
 
-const Calender = (props) => {
+const Calenders = (props) => {
   return (
     <Suspense fallback={<Loading />}>
       <div
