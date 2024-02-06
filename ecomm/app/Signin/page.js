@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import Link from "next/link";
 import loading from "../loading";
-function page (){
+function Signin (){
   const Authenticated =async()=>{
     const res = await fetch('/api/googlejwt',{
       method:'POST',
@@ -223,4 +223,4 @@ console.log(session)
   );
 };
 
-export default page;
+export default Signin;

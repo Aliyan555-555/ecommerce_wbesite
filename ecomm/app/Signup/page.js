@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
-function page (){
+function Signup (){
   const router = useRouter();
   const [data, setdata] = useState({ name: "", email: "", password: "" });
   const hendleChangeName = (e) => {
@@ -123,4 +123,4 @@ function page (){
   );
 };
 
-export default page;
+export default Signup;

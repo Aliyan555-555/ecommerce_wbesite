@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
 
 
-function page(props){
+function Admin (props){
   
   const router = useRouter();
   const [OTP, setOTP] = useState("");
@@ -50,4 +50,4 @@ console.log(props)
   );
 };
 
-export default page;
+export default Admin;
