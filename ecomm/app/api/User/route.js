@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import connect from "@/Data/connect";
 import User from "../../../model/User";
+connect()
 var CryptoJS = require("crypto-js");
-connect();
 export async function POST(req) {
   const { name, email, password } = await req.json();
   if ((!name || !email || !password)) {

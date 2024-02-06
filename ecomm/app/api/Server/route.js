@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
 import Product from "../../../model/Product"
 import connect from "@/Data/connect";
-import { client } from "@/lib/client";
+import { client } from "@/lib/client";   
+connect()
 export async function GET(Request) {
  try {
-   connect()
+
      const Bannerqurye = `*[_type == 'Banner']`;
      const Bannerdata = await client.fetch(Bannerqurye);
      const banners = await Bannerdata;
