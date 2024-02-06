@@ -1,4 +1,3 @@
-import { urlFor } from '@/lib/client'
 import React from 'react'
 import MainButton from './UI/MainButton'
 

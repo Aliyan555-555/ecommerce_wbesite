@@ -4,7 +4,7 @@ import { useState, useContext, useEffect } from "react";
 import { createContext } from "react";
 const Context = createContext();
 import React from "react";
-import { client } from "@/lib/client";
+// import { client } from "@/lib/client";
 import { FiMenu } from "react-icons/fi";
 
 

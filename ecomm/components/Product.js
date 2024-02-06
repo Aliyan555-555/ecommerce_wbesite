@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { urlFor } from "@/lib/client";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip as ReactTooltip } from "react-tooltip";
@@ -11,7 +10,6 @@ import { GlobleContext } from "@/Context/StateContext";
 import { RxCross2 } from "react-icons/rx";
 import Qty from "./Product/Qty";
 import Size from "./Product/Size";
-import { HiColorSwatch } from "react-icons/hi";
 import Image from "next/image";
 const Product = ({ data }) => {
   const ColorFunction = (pickColor, unPick1, unPick2, unPick3) => {

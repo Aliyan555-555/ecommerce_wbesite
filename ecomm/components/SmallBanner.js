@@ -16,30 +16,7 @@ const SmallBanner = ({ Products }) => {
   const [SelectedTab1, setSelectedTab1] = useState(false);
   const [SelectedTab2, setSelectedTab2] = useState(false);
   const [SelectedTab3, setSelectedTab3] = useState(false);
-  // const FliterProducts = (qury) => {
-  //   if (qury === "New Arrival") {
-  //     btn1ref.current.style.borderBottomColor = "#222222";
-  //     btn1ref.current.style.color = "#222222";
-  //     btn2ref.current.style.color = "#e2e2e2";
-  //     btn3ref.current.style.color = "#e2e2e2";
-  //     btn3ref.current.style.borderBottomColor = "#e2e2e2";
-  //     btn2ref.current.style.borderBottomColor = "#e2e2e2";
-  //   } else if (qury === "Best Salles") {
-  //     btn2ref.current.style.color = "#222222";
-  //     btn3ref.current.style.color = "#e2e2e2";
-  //     btn1ref.current.style.color = "#e2e2e2";
-  //     btn2ref.current.style.borderBottomColor = "#222222";
-  //     btn3ref.current.style.borderBottomColor = "#e2e2e2";
-  //     btn1ref.current.style.borderBottomColor = "#e2e2e2";
-  //   } else if (qury === "On Sale") {
-  //     btn3ref.current.style.color = "#222222";
-  //     btn2ref.current.style.color = "#e2e2e2";
-  //     btn1ref.current.style.color = "#e2e2e2";
-  //     btn2ref.current.style.borderBottomColor = "#e2e2e2";
-  //     btn1ref.current.style.borderBottomColor = "#e2e2e2";
-  //     btn3ref.current.style.borderBottomColor = "#222222";
-  //   }
-  // };
+ 
   const hendle = (TabNo) => {
     if (TabNo === 1) {
       setSelectedTab1(true);

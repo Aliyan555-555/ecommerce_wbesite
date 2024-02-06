@@ -77,7 +77,7 @@ const Catagories = () => {
   };
 
   return (
-    <div className="m-auto mt-28 xl:w-[90%] h-[40rem] gap-3 flex">
+    <div className="m-auto mt-28 md:w-[90%] md:h-[28rem] items-center max-sm:flex-col sm:h-[30rem] min-[1000px]:h-[40rem] gap-3 flex">
       <style jsx global>{`
         .Image {
           background: linear-gradient(
@@ -123,7 +123,7 @@ const Catagories = () => {
             onMouseEnter={() => MouseEnter(item.id)}
             onMouseLeave={() => MouseOut(item.id)}
             key={item.id}
-            className="w-1/3 h-full  relative overflow-hidden"
+            className="w-1/3 h-full max-sm:w-[70vw] max-sm:h-[60vw]  relative overflow-hidden"
           >
             <img
               src={item.src}

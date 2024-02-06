@@ -1,5 +1,4 @@
 import React from "react";
-import { urlFor } from "@/lib/client";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { MdOutlineCancel } from "react-icons/md";
 import { Tooltip as ReactTooltip } from "react-tooltip";
