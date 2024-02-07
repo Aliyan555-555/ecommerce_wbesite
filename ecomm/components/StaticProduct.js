@@ -1,12 +1,11 @@
-import { urlFor } from "@/lib/client";
 import React, { useRef, useState, useEffect } from "react";
 import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { GlobleContext } from "@/Context/StateContext";
 import Link from "next/link";
 import Qty from "./Product/Qty";
 import Image from "next/image";
 const StaticProduct = ({ data }) => {
+  console.log(data)
   const {
     qty,
     setqty,
@@ -18,7 +17,7 @@ const StaticProduct = ({ data }) => {
     OrderDetail,
     setOrderDetail,
   } = GlobleContext();
-  const { _id, title, detail, price, image, color, oldprice, size } = data;
+  const { _id, title, description, price, images, colors, oldprice, sizes } = data;
   const [index, setindex] = useState(0);
 console.log(Cartitem)
   const ToogleImage = (i) => {
@@ -191,13 +190,13 @@ console.log(Cartitem)
     SizeRef1.current?.classList.remove("bg-hover");
     setOrderDetail({
       varient: {
-        color: color && color[0],
-        size: size && size[0],
+        color: colors && colors[0],
+        size: sizes && sizes[0],
         quantity: qty * 1,
       },
       title: data.title,
       price: data.price,
-      image: data.image[0],
+      image: data.images[0],
       totleprice: data.price * qty,
     });
   }, []);
@@ -208,20 +207,20 @@ console.log(Cartitem)
           <Image
           width={200}
           height={200}
-            src={urlFor(image && image[index])}
+            src={images[0].src}
             className="w-full h-[80%] object-contain"
             alt={title}
           />
         </div>
         <div className="flex flex-row gap-3 w-full h-[20%]">
-          {image.length <= 4 &&
-            image.map((data, i) => {
+          {images.length <= 4 &&
+            images.map((data, i) => {
               return (
                 <Image 
                 width={50}
                 height={50}
-                  key={data._key}
-                  src={urlFor(image && image[i])}
+                  key={i}
+                  src={data.src}
                   alt={title}
                   className="p-[1rem] object-contain rounded-[1rem] bg-hover w-[25%] h-[100%] hover:bg-theme transition-all duration-700"
                   onMouseEnter={() => {
@@ -250,11 +249,11 @@ console.log(Cartitem)
           )}
         </div>
         <div className="flex flex-row w-[60%] justify-between items-center ">
-          {color && color.length > 0 ? (
+          {colors && colors.length > 0 ? (
             <div className="flex flex-col gap-2 mt-4">
               <h5 className="text-2xl ">Available Colors</h5>
               <div className="flex flex-row gap-2">
-                {color?.map((colorbg, i) => {
+                {colors?.map((colorbg, i) => {
                   return (
                     <span
                       style={{ background: colorbg }}
@@ -273,11 +272,11 @@ console.log(Cartitem)
           ) : (
             ""
           )}
-          {size && size.length > 0 ? (
+          {sizes && sizes.length > 0 ? (
             <div className="flex flex-col gap-2 mt-4">
               <h5 className="text-2xl ">Available Size</h5>
               <div className="flex flex-row gap-2">
-                {size.map((item, i) => {
+                {sizes.map((item, i) => {
                   return (
                     <span
                       key={item}
@@ -325,7 +324,7 @@ console.log(Cartitem)
         </div>
         <div className="flex flex-col mt-4">
           <h4 className="text-2xl font-extrabold">Description:</h4>
-          <p className="w-[30rem] text-lg">{detail}</p>
+          <p className="w-[30rem] text-lg">{description}</p>
         </div>
       </div>
     </div>

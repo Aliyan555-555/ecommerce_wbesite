@@ -2,13 +2,13 @@
 
 // postconfig.config.js
 module.exports = {
-  plugins: {
-   ' postcss-import': {},
-    'tailwindcss/nesting': {},
-    'postcss-nested': {},
-   
-  }
+  plugins: [
+    'postcss-nested',
+    'tailwindcss',
+    'autoprefixer',
+  ],
 }
+
 module.exports = {
   plugins: {
     tailwindcss: {},

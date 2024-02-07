@@ -7,7 +7,7 @@ export async function middleware(req, res) {
     return NextResponse.redirect(new URL("/", req.url));}
   if (token === undefined && pathname === "/654689e4fb7e5478e0862ae8") {
     return NextResponse.redirect(new URL("/", req.url));}
-  if (cookies === undefined && pathname.includes("/Product/")) {
+  if (cookies === undefined && pathname.includes("/Product")) {
     return NextResponse.redirect(new URL("/Signin", req.url));}
 }
 

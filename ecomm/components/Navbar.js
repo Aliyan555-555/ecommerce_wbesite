@@ -1,5 +1,6 @@
 "use client";
 import { RxCross2 } from "react-icons/rx";
+import { LuSearch } from "react-icons/lu";
 import { FiMenu } from "react-icons/fi";
 import { HiShoppingBag } from "react-icons/hi2";
 import Cartitems from "./Cartitems";
@@ -7,13 +8,14 @@ import Link from "next/link";
 import { NavLink } from "@/Constants";
 import React, { useEffect, useState } from "react";
 import { GlobleContext } from "@/Context/StateContext";
-import { IoClose, IoCloseSharp } from "react-icons/io5";
+import { IoClose, IoCloseSharp, IoSearchOutline } from "react-icons/io5";
 import gsap from "gsap";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { PiHeartBold, PiHeartStraight } from "react-icons/pi";
 import Wishitem from "./Wishitem";
-const Navbar = ({ token,AdminCookies }) => {
-  const [AdminButtonCheck,setAdminButton] = useState(false)
+const Navbar = ({ token, AdminCookies }) => {
+  const [SearchQuery,setSearchQuery] = useState("");
+  const [AdminButtonCheck, setAdminButton] = useState(false);
   const {
     showCart,
     setWish,
@@ -70,122 +72,165 @@ const Navbar = ({ token,AdminCookies }) => {
   const NavUnderlin5 = `#NavLink-${NavLink[4]?.name}`;
   const NavUnderlin6 = `#NavLink-${NavLink[5]?.name}`;
 
-const AdminButton = async ()=>{
-  if (token != undefined && AdminCookies === '654689e4fb7e5478e0862ae8'){
-    setAdminButton(true)
-  }else{
-    setAdminButton(false) 
+  const AdminButton = async () => {
+    if (token != undefined && AdminCookies === "654689e4fb7e5478e0862ae8") {
+      setAdminButton(true);
+    } else {
+      setAdminButton(false);
+    }
+  };
+  useEffect(() => {
+    AdminButton();
+  }, []);
+
+  const hendleAnimatedSearch = () => {
+    document.getElementById("SearchCon").style.display = "flex";
+    gsap.to("#SearchBox", {
+      duration: 0.2,
+      width: "70%",
+    });
+  };
+  const hendleSearchClick = () => {
+    document.getElementById("Search").click();
+    document.getElementById("Search").click();
+  };
+  const hendleCloseSearchBar = ()=>{
+    document.getElementById('SearchBox').style.width = '10%'
+
+    document.getElementById('SearchCon').style.display = 'none';
+    setSearchQuery("");
   }
-}
-useEffect(()=>{
-  AdminButton()
-})
+  const hendleCloseSearchBarOnEnter = (e)=>{
+    if(e.code === 'Enter'){
+      document.getElementById('SearchBox').style.width = '10%'
+      document.getElementById('SearchCon').style.display = 'none';
+      setSearchQuery("");
+    }
+  }
+  const hendleSearchValue = (e)=>{
+    setSearchQuery(e.target.value)
+  }
   return (
     <>
       <div className="Navbar w-screen px-[20px]  bg-body h-[9rem] sm:h-36 flex flex-row justify-between items-center fixed top-0 z-20">
         <style jsx global>{`
-      ${NavUnderlin1}::after{
-          content:'';
-          position:absolute;
-          height:2px;
-          bottom:0;
-          width:0%;
-          left:0;
-          transition: width .4s ease;
-          background:#ff2600;
+          ${NavUnderlin1}::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            bottom: 0;
+            width: 0%;
+            left: 0;
+            transition: width 0.4s ease;
+            background: #ff2600;
+          }
+          ${NavUnderlin1}:hover::after {
+            width: 100%;
+          }
+          ${NavUnderlin2}::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            bottom: 0;
+            width: 0%;
+            left: 0;
+            transition: width 0.4s ease;
+            background: #ff2600;
+          }
+          ${NavUnderlin2}:hover::after {
+            width: 100%;
+          }
+          ${NavUnderlin3}::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            bottom: 0;
+            width: 0%;
+            left: 0;
+            transition: width 0.4s ease;
+            background: #ff2600;
+          }
+          ${NavUnderlin3}:hover::after {
+            width: 100%;
+          }
+          ${NavUnderlin4}::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            bottom: 0;
+            width: 0%;
+            left: 0;
+            transition: width 0.4s ease;
+            background: #ff2600;
+          }
+          ${NavUnderlin4}:hover::after {
+            width: 100%;
+          }
 
-        }
-      ${NavUnderlin1}:hover::after{
-         width: 100%;
-        }
-      ${NavUnderlin2}::after{
-          content:'';
-          position:absolute;
-          height:2px;
-          bottom:0;
-          width:0%;
-          left:0;
-          transition: width .4s ease;
-          background:#ff2600;
-
-        }
-      ${NavUnderlin2}:hover::after{
-         width: 100%;
-        }
-      ${NavUnderlin3}::after{
-          content:'';
-          position:absolute;
-          height:2px;
-          bottom:0;
-          width:0%;
-          left:0;
-          transition: width .4s ease;
-          background:#ff2600;
-
-        }
-      ${NavUnderlin3}:hover::after{
-         width: 100%;
-        }
-      ${NavUnderlin4}::after{
-          content:'';
-          position:absolute;
-          height:2px;
-          bottom:0;
-          width:0%;
-          left:0;
-          transition: width .4s ease;
-          background:#ff2600;
-
-        }
-      ${NavUnderlin4}:hover::after{
-         width: 100%;
-        }
-     
-      ${NavUnderlin5}::after{
-          content:'';
-          position:absolute;
-          height:2px;
-          bottom:0;
-          width:0%;
-          left:0;
-          transition: width .4s ease;
-          background:#ff2600;
-
-        }
-      ${NavUnderlin5}:hover::after{
-         width: 100%;
-        }
-      ${NavUnderlin6}::after{
-          content:'';
-          position:absolute;
-          height:2px;
-          bottom:0;
-          width:0%;
-          left:0;
-          transition: width .4s ease;
-          background:#ff2600;
-
-        }
-      ${NavUnderlin6}:hover::after{
-         width: 100%;
-        }
-      #NavLink-Admin::after{
-          content:'';
-          position:absolute;
-          height:2px;
-          bottom:0;
-          width:0%;
-          left:0;
-          transition: width .4s ease;
-          background:#ff2600;
-
-        }
-      #NavLink-Admin:hover::after{
-         width: 100%;
-        }
-     
-
+          ${NavUnderlin5}::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            bottom: 0;
+            width: 0%;
+            left: 0;
+            transition: width 0.4s ease;
+            background: #ff2600;
+          }
+          ${NavUnderlin5}:hover::after {
+            width: 100%;
+          }
+          ${NavUnderlin6}::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            bottom: 0;
+            width: 0%;
+            left: 0;
+            transition: width 0.4s ease;
+            background: #ff2600;
+          }
+          ${NavUnderlin6}:hover::after {
+            width: 100%;
+          }
+          #NavLink-Admin::after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            bottom: 0;
+            width: 0%;
+            left: 0;
+            transition: width 0.4s ease;
+            background: #ff2600;
+          }
+          #NavLink-Admin:hover::after {
+            width: 100%;
+          }
         `}</style>
+        <div
+          id="SearchCon"
+          className="w-screen h-screen hidden  absolute top-0 left-0 max-md:items-center md:justify-center z-[10000000000000000000000000000000000] bg-black-transparent"
+        >
+          <div id="SearchBox" className="w-full md:w-[10%] pt-28">
+            <div className="relative w-full flex flex-col">
+              <input
+                type="text"
+                id="Search"
+                value={SearchQuery}
+                onChange={(e)=>hendleSearchValue(e)}
+                onClick={hendleAnimatedSearch}
+                autoComplete="off"
+                onKeyDown={(e)=>hendleCloseSearchBarOnEnter(e)}
+                className="border-hover  text-[black] bg-body text-2xl transition-colors outline-none border-b py-8 rounded-full px-10 font-normal"
+                placeholder="Search..."
+              />
+              <Link href={{pathname:'/search',query:{query:SearchQuery}}} onClick={hendleCloseSearchBar} className="bg-Dashboard text-body rounded-full p-[1.6rem] text-3xl text-center absolute top-2 bottom-2 right-2">
+                <IoSearchOutline />
+              </Link>
+            </div>
+          </div>
+           
+        </div>
         <div
           style={ResponsiveMenu}
           className="duration-500 overflow-hidden absolute top-0 lg:hidden flex items-center justify-center flex-col z-50 left-0 md:w-[40%] sm:w-[60%] w-full h-[100vh] bg-body "
@@ -242,11 +287,26 @@ useEffect(()=>{
               <li>{data.name}</li>
             </Link>
           ))}
-          {AdminButtonCheck?<Link id={`NavLink-Admin`} className="w-full relative p-4 sm:w-auto text-center hover:text-Red transition-colors duration-400 whitespace-nowrap hover:bg-[rgba(7, 0, 4, 0.32)] p-[.5rem] sm:p-[.5rem]" href={`/${AdminCookies}/Dashboard`}>Admin</Link>:""}
+          {AdminButtonCheck ? (
+            <Link
+              id={`NavLink-Admin`}
+              className="w-full relative p-4 sm:w-auto text-center hover:text-Red transition-colors duration-400 whitespace-nowrap hover:bg-[rgba(7, 0, 4, 0.32)] p-[.5rem] sm:p-[.5rem]"
+              href={`/${AdminCookies}/Dashboard`}
+            >
+              Admin
+            </Link>
+          ) : (
+            ""
+          )}
         </ul>
         <div className="flex relative w-auto items-center justify-end gap-4 ">
-          {/* {token === undefined && (<><Link title="Login" className="px-8 py-4 rounded-lg text-hover bg-theme font-semibold text-xl" href={'/Signin'}>Signin</Link>
-       <Link className="px-8 py-4 rounded-lg text-hover bg-theme font-semibold text-xl" href={'/Signup'}title="Signup">Signup</Link></>)} */}
+          <div
+            className=" p-[12px] md:flex hidden   text-Dashboard text-3xl sm:text-4xl md:text-5xl rounded-full text relative cursor-pointer hover:bg-hover"
+            onClick={hendleSearchClick}
+            title="Wishlist"
+          >
+            <LuSearch className="font-black" />
+          </div>
           <div
             className=" p-[12px] md:flex hidden   text-Dashboard text-3xl sm:text-4xl md:text-5xl rounded-full text relative cursor-pointer hover:bg-hover"
             onClick={ToogleShowWish}

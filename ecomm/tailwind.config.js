@@ -20,6 +20,7 @@ module.exports = {
       'Red':'#ff2600',
       'Downloade':'#00b009',
       'white-transparent':'#ffffff1e',
+      'black-transparent':'rgba(0, 0, 0, 0.75)'
     },
    
     extend: {

@@ -2,6 +2,7 @@
 import React from "react";
 import Banner from "@/components/Banner";
 import SmallBanner from "@/components/SmallBanner";
+import './index.css'
 import { GlobleContext } from "@/Context/StateContext";
 import Services from "@/components/Services";
 import Footer from "@/components/Footer";

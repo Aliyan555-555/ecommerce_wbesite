@@ -77,7 +77,7 @@ const Catagories = () => {
   };
 
   return (
-    <div className="m-auto mt-28 md:w-[90%] md:h-[28rem] items-center max-sm:flex-col sm:h-[30rem] min-[1000px]:h-[40rem] gap-3 flex">
+    <div className="m-auto mt-28 md:w-[90%] md:h-[30rem] items-center max-sm:flex-col sm:h-[30rem] min-[1000px]:h-[40rem] gap-3 flex">
       <style jsx global>{`
         .Image {
           background: linear-gradient(

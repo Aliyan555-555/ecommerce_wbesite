@@ -166,7 +166,7 @@ const Product = ({ data }) => {
       },
     });
   };
-  console.log(images)
+  
   return (
     <div
       id={`product-${_id}`}
@@ -292,7 +292,7 @@ const Product = ({ data }) => {
         </Link>
       </div>
       <div className="w-full h-[30%]  flex flex-col pt-6">
-        <Link href={`/Product/${_id && _id}`}>
+        <Link href={`/Product/${_id}`}>
           <h4 className="w-full text-Dashboard font-bold text-3xl">{title}</h4>
         </Link>
         <span className="w-full flex text-3xl text-Rating py-3 relative left-[-2px]">
