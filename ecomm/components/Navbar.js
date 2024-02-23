@@ -95,7 +95,6 @@ const SearchRef = useRef(null)
     document.getElementById("Search").click();
     if(SearchRef.current){
       SearchRef.current.focus();
-      console.log(SearchRef);
     }
   };
   const hendleCloseSearchBar = ()=>{
