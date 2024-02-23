@@ -6,7 +6,7 @@ import { HiShoppingBag } from "react-icons/hi2";
 import Cartitems from "./Cartitems";
 import Link from "next/link";
 import { NavLink } from "@/Constants";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 import { GlobleContext } from "@/Context/StateContext";
 import { IoClose, IoCloseSharp, IoSearchOutline } from "react-icons/io5";
 import gsap from "gsap";
@@ -71,8 +71,9 @@ const Navbar = ({ token, AdminCookies }) => {
   const NavUnderlin4 = `#NavLink-${NavLink[3]?.name.replace(/ /g, "-")}`;
   const NavUnderlin5 = `#NavLink-${NavLink[4]?.name}`;
   const NavUnderlin6 = `#NavLink-${NavLink[5]?.name}`;
-
+const SearchRef = useRef(null)
   const AdminButton = async () => {
+    
     if (token != undefined && AdminCookies === "654689e4fb7e5478e0862ae8") {
       setAdminButton(true);
     } else {
@@ -92,7 +93,9 @@ const Navbar = ({ token, AdminCookies }) => {
   };
   const hendleSearchClick = () => {
     document.getElementById("Search").click();
-    document.getElementById("Search").click();
+    if(SearchRef.current){
+      SearchRef.current.click();
+    }
   };
   const hendleCloseSearchBar = ()=>{
     document.getElementById('SearchBox').style.width = '10%'
@@ -217,6 +220,7 @@ const Navbar = ({ token, AdminCookies }) => {
                onFocus={hendleAnimatedSearch}
                 onBlur={hendleCloseSearchBar }
                 type="text"
+                ref={SearchRef}
                 id="Search"
                 value={SearchQuery}
                 onChange={(e)=>hendleSearchValue(e)}
