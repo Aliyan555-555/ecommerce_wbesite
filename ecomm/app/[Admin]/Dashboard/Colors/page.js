@@ -1,7 +1,7 @@
 "use client"
 import RightLayout from '@/components/Dashboard/RightLayout'
 import Sidebar from '@/components/Dashboard/Sidebar'
-import React, { Suspense } from 'react'
+import React, { Suspense ,useEffect} from 'react'
 import Color from '@/components/Dashboard/Colors';
 import Loading from '@/components/Loading';
 import MainLayout from '@/components/Dashboard/MainLayout';
