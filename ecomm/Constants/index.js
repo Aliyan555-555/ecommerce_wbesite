@@ -22,11 +22,11 @@ export const NavLink = [
     name: "Collection",
     id: 2,
   },
-  {
-    href: "/",
-    name: "Products",
-    id: 3,
-  },
+  // {
+  //   href: "/",
+  //   name: "Products",
+  //   id: 3,
+  // },
   {
     href: "/",
     name: "Contact Us",
