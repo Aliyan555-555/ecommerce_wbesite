@@ -94,7 +94,7 @@ const SearchRef = useRef(null)
   const hendleSearchClick = () => {
     document.getElementById("Search").click();
     if(SearchRef.current){
-      SearchRef.current.click();
+      SearchRef.current.focus();
       console.log(SearchRef);
     }
   };
