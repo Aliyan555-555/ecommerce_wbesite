@@ -214,6 +214,8 @@ const Navbar = ({ token, AdminCookies }) => {
           <div id="SearchBox" className="w-full md:w-[10%] pt-28">
             <div className="relative w-full flex flex-col">
               <input
+               onFocus={hendleAnimatedSearch}
+                // onBlur={handleBlur}
                 type="text"
                 id="Search"
                 value={SearchQuery}
