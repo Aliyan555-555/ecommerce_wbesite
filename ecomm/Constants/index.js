@@ -22,11 +22,11 @@ export const NavLink = [
     name: "Collection",
     id: 2,
   },
-  {
-    href: "/",
-    name: "Products",
-    id: 3,
-  },
+  // {
+  //   href: "/",
+  //   name: "Products",
+  //   id: 3,
+  // },
   {
     href: "/",
     name: "Contact Us",
@@ -242,11 +242,3 @@ export const Dashboard_Warn = {
   position: toast.POSITION.TOP_CENTER,
   style:{background:'#222222',color:'white',fontSize:'1.4rem',}
 }
-export const SearchServices = [
-  {
-    id:1,
-    name:'Free Delivery',
-    icon:HiMiniShoppingBag,
-    iconColor:""
-  }
-]
