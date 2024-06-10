@@ -242,3 +242,12 @@ export const Dashboard_Warn = {
   position: toast.POSITION.TOP_CENTER,
   style:{background:'#222222',color:'white',fontSize:'1.4rem',}
 }
+
+export const SearchServices = [
+  {
+    id:1,
+    name:'Free Delivery',
+    icon:HiMiniShoppingBag,
+    iconColor:""
+  }
+]
