@@ -148,7 +148,7 @@ const SmallBanner = ({ Products }) => {
         >
           {Products.filter((item) => item)?.map((data) => (
             <SwiperSlide key={data._id}>
-              <div className="w-[75%]  min-[300px]:h-auto min-[400px]:h-auto min-[300px]:w-[50%]  min-[400px]:w-[40%] sm:w-auto">
+              <div className="">
                 <Product data={data} />
               </div>
             </SwiperSlide>

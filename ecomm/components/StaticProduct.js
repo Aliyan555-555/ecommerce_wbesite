@@ -233,7 +233,7 @@ console.log(Cartitem)
       </div>
       <div className="flex flex-col w-[65%] text-[#000] p-4 sm:p-16">
         <h2 className="text-5xl  font-semibold">{title}</h2>
-        <div className="flex flex-row text-2xl text-theme gap-2 mt-4 px-1">
+        <div className="flex flex-row text-4xl text-Rating gap-2 mt-4 px-1">
           <BsStarFill />
           <BsStarFill />
           <BsStarFill />

@@ -131,7 +131,7 @@ console.log(session)
   })
   return (
     <div className="w-full h-[95vh] flex items-center justify-center">
-      <div className="w-full flex flex-col  md:flex-row-reverse md:w-[75%] h-[70%] rounded-2xl bg-[#fafafa] items-center justify-center gap-16">
+      <div className="w-full flex flex-col  md:flex-row-reverse md:w-[75%] h-[70%] rounded-2xl bg-[#fafafa]    items-center  justify-center sm:gap-16">
         <Image
           src="/login1.svg"
           width={"500"}
