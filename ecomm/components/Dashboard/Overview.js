@@ -79,14 +79,14 @@ const Overview = ({ position }) => {
             <div className="w-full flex flex-col">
               <div className="w-full flex items-center justify-between  px-12 py-10">
                 <h2 className="text-3xl font-bold ">Latest Orders</h2>
-                <button to={"/Admin/Dashboard/Order"}>
+                <a href={"/Admin/Dashboard/Order"}>
                   <button
                     type="button"
                     className="px-8 py-4 rounded-xl text-2xl bg-Dashboard text-hover"
                   >
                     See ALL Orders
                   </button>
-                </button>
+                </a>
               </div>
               <div className="w-full flex items-center justify-between px-10 text-xl py-4">
                 <span>date</span>
